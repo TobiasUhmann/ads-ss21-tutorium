@@ -1,9 +1,9 @@
-package week_2;
+package week_3;
 
 import org.junit.Test;
 
 import static org.junit.Assert.*;
-import static week_2.OptimizedArraySum.sum;
+import static week_3.OptimizedArraySum.sum;
 
 public class OptimizedArraySumTest {
 
