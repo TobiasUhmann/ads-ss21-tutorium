@@ -8,22 +8,45 @@ import static week_3.OptimizedArraySum.sum;
 public class OptimizedArraySumTest {
 
   @Test
-  public void sumFew() {
-    assertEquals(6, sum(new int[]{1, 2, 3}));
+  public void sumLongArray() {
+    int[] longArray = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+
+    int longArraySum = ArraySum.sum(longArray);
+
+    assertEquals(55, longArraySum);
   }
 
   @Test
-  public void sumMany() {
-    assertEquals(55, sum(new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}));
+  public void sumShortArray() {
+    int[] shortArray = {1, 2, 3};
+
+    int shortArraySum = ArraySum.sum(shortArray);
+
+    assertEquals(6, shortArraySum);
   }
 
   @Test
-  public void sumNone() {
-    assertEquals(0, sum(new int[]{}));
+  public void sumEmptyArray() {
+    int[] emptyArray = {};
+
+    int emptyArraySum = ArraySum.sum(emptyArray);
+
+    assertEquals(0, emptyArraySum);
+  }
+
+  @Test
+  public void sumNegativeArray() {
+    int[] negativeArray = {-1};
+
+    int negativeArraySum = ArraySum.sum(negativeArray);
+
+    assertEquals(-1, negativeArraySum);
   }
 
   @Test(expected = NullPointerException.class)
-  public void sumNull() {
-    sum(null);
+  public void sumNoArray() {
+    int[] noArray = null;
+
+    ArraySum.sum(noArray);
   }
 }
